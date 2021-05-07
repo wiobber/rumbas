@@ -82,7 +82,7 @@ macro_rules! question_part_type {
     ($struct: ident, $($field: ident: $type: ty$(: $field_attribute: meta)?), *) => {
         optional_overwrite! {
             $struct,
-            marks: usize,
+            marks: numbas::exam::Primitive,
             prompt: TranslatableString,
             use_custom_name: bool,
             custom_name: String, //Translatable?

@@ -727,7 +727,7 @@ pub enum ExamQuestionPart {
 #[skip_serializing_none]
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct ExamQuestionPartSharedData {
-    marks: Option<usize>,
+    marks: Option<Primitive>,
     prompt: Option<String>, //TODO option? Maybe not in this type, but in other. Some types require this, other's not?
     #[serde(rename = "useCustomName")]
     use_custom_name: Option<bool>,
@@ -762,7 +762,7 @@ pub struct ExamQuestionPartSharedData {
 
 impl ExamQuestionPartSharedData {
     pub fn new(
-        marks: Option<usize>,
+        marks: Option<Primitive>,
         prompt: Option<String>,
         use_custom_name: Option<bool>,
         custom_name: Option<String>,
